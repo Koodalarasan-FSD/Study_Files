@@ -1,0 +1,46 @@
+What are Routes and Route?
+The <Routes> component is used as the root container for declaring your collection of routes.
+The <Route> component is used to define a route and specify the component that should render when the route matches.
+
+What are Route Parameters in React Routing?
+Route parameters in React Router are a way to pass dynamic values(data) to the component as part of URL path.
+For ex: <Route path="/users/:userId" component={UserProfile}> where userId is the route parameter.
+
+What is role of Switch Component in React Routing?
+Switch component ensures that only the first matching <Route> is rendered and rest are ignored.For ex, Switch
+is commonly used to handle 404 or "not found" routes.
+
+What is the role of exact prop in React Routing?
+exact prop is used with the <Route> component to match exactly to the provided path.
+
+What is Redux? Explain them?
+Redux is a predictable state container for Javascript apps.
+It is for javascript apps.
+It is a state container.
+It is predictable.
+Redux is not tied to React & It can be used with React,Vue or even vanilla javascript
+Redux is a library for javascript applications.
+Redux stores the state of your application.
+State of an app is the state represented by all the individual components of that app.
+Redux will store and manage the application state. 
+React-Redux is the official Redux UI binding library for React
+Redux is a library for managing state in a predictable way in Javascript applications.
+React-Redux is a library that provides bindings to use React and Redux together in an application.
+
+Redux has Three core concepts such as 
+1)store 2)action 3)reducer
+1)store - A store that holds the state of your application.
+2)action - An action that describes the changes in the state of the application.
+3)reducer - A reducer which actually carries out the state transtition depending on the action.
+
+Redux has three principles such as
+First Principle:
+"The state of your whole application is stored in an object tree within a single store"
+Maintain our application state in a single object which would be managed by the Redux store.
+Second Principle:
+"The only way to change the state  is to emit an action, an object describing what happened"
+To update the state of your app, you need to let Redux know about that with an action.Not allowed to 
+directly update the state object.
+Third Principle:
+"To specify how the state tree is transformed by actions, you write pure reducers"
+Reducer(previousState,action)=>newState 

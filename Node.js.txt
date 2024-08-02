@@ -1,0 +1,80 @@
+What is Node.js?
+Node.js is not framework or language. Node.js is runtime environment for executing javascript code on the server side.
+
+How node is a runtime environment on server side? What is V8?
+Browsers execute JavaScript on the client side, and similiarity, Node.js executes JavaScript on the server side.
+V8 is a JavaScript engine for the JavaScript language.
+
+What is difference between Runtime environment and Framework?
+Runtime Environment primarily focuses on providing the necessary infrastructure for code execution, including services like memory management and I/O operations.
+Framework primarily focuses on simplifying the development process by offering a structured set of tools, libraries,
+and best practices.
+
+What is difference between Node.js and Express.js?
+Node.js is a runtime environment that allows the execution of JavaScript code server-side.
+Express.js is a framework built on the top Node.js. It is designed to simplify the process of building web applications and APIs by providing a set of features like simple routing system, middleware support etc., 
+
+What are the 7 main features of Node.js?
+1)Single Threaded 2)Asynchronous 3)Event-Driven 4)V8 JavaScript Engine 5)Cross-platform 6)NPM 7)Real-Time capabilities
+
+What is Single threaded programming?
+What is synchronous Programming?
+In a synchronous program, each task is performed one after the other, and the program waits for each operation to
+complete before moving on to the next one. Synchornous programming focuses on the order of execution in a sequential manner, while single-threaded programming focuses on the single thread.
+
+What is Multi-Threaded Programming?
+What is asynchronous Programming?
+In asynchronous programming, tasks can start,run and parallel, tasks can be executed independently of each other.
+Asynchronous operations are  typically non-blocking. In Node.js,asynchronous flow can be achieved by its single-threaded, non-blocking and event-driven architecture. Asynchronous programming enables better concurrency and responsiveness.
+
+What are Events, Event Emitter, Event Queue, Event Loop & Event Driven?
+Event: Signals that something has happened in a program.
+Event Emitter: Create or emit events.
+Event Queue: Events emitted queued(stored) in event queue.
+Event Handler(Event Listener): Function that responds to specific events.
+Event Loop: The event loop picks up event from the event queue and executes them in the order they were executed.
+
+What are advantages of Node.js?
+1) Asynchronous enables handling multiple concurrent request & non blocking execution of thread.
+2) Built on the V8 JS engine from Google Chrome, Node.js executes code fast.
+3) Event-Driven Architecture - Efficient handling events Great for real time applications like chat applications, gaming applications(using web sockets) where bidirectional communication is required.
+4) It supports deployments on various operating systems, enhancing flexibility.
+5) Coding in JavaScript language therefore no need to learn a new language.
+6) It suitable for building scalable applications that can handle increased loads.
+
+When to use Node.js?
+1) Ideal to real-time applications like chat applications, online gaming and collaborative tools due to its event-driven architecture.
+2) Excellent for building lightweight and scalable RESTful APIs that handle a large number of concurrent connections.
+3) Well-suited for building microservices-based architectures, enabling	modular and scalable systems.
+
+When not to use Node.js(Disadvantage)?
+CPU-Intensive Tasks: Avoid for applications that involve heavy CPU processing(Image/Video Processing, Data Encryption/Decryption) as Node.js may not provide optimal performance in such scenarios because it single threaded
+and for heavy computation multi-threaded is better.
+
+What is role of package.json file in Node?
+Package.json file contains project metadata(Information about the project) for ex: project name, version, description, author, license etc.,
+
+What are Modules in Node? What is difference between a function and module?
+A module contains a specific functionality that can be easily reused within a Node.js application.
+Ideally in node.js, a javascript file can be treated as a module.
+A module is a broader concept that encapsulates functionality, while a function is a specific set of instructions within that module.
+Modules can contains multiple functions and variables.
+
+What are top 5 built-in modules in Node.js?
+1)fs Module 2)Path Module 3)OS Module 4)events Module 5)http Module
+
+1)fs(File System) Module in Node provides a set of methods for interacting with the file system.
+2)Path Module provides utilities for joining, resolving, parsing, formatting, normalizing and mainpulating paths.
+3)OS Module in Node.js provides a set of methods for interacting with the operating system.
+4)Events Module is also a built-in module which is used to handle the events.
+5) http Module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+What are Events Arguments?
+Event Arguments refer to the additional information or data that can be passed along with an emitted event.
+
+What is difference between function and event?
+A function is a reusable piece of code that performs a specific task when invoked or called.
+Event represent actions that can be observed and responded to. Events will call functions internally.
+
+What is role of createServer() method of http module?
+The createServer() method of http module in Node.js is used to create an HTTP Server.

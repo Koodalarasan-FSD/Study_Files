@@ -1,0 +1,154 @@
+
+What is React?
+React is an open source JavaScript Library. React is used for building User Interface(UI).React simplifies the
+creation of SPA(Single Page Application) by using reusable components. React uses a virtual DOM to efficiently
+update the UI without re-render the entire page, which helps improve performance and make the application more
+responsive.
+
+What is SPA(Single Page Application)?
+A Single Page Application is a web application that have only one single web page. Whenever user do some action on
+the website, then in response content is dynamically updated without refreshing or loading a new page.
+
+What are advantages(Pros) of React?
+1)simple to build Single Page Application(by using components)
+2)React is cross platform and open source(free to use)
+3)Lightweight and very fast(Virtual DOM)
+4)Large community and ecosystem
+5)Testing is easy.
+
+What is DOM?
+The DOM(Document Object Model) represents the web page as a tree-like structure which allows JavaScript to
+dynamically access and manipulate the content and structure of a web page.
+
+What is React Components?
+In React, a component is a reusable building block for creating user interfaces.
+
+What is NPM? What is the role of node_modules folder in React Project Folder?
+NPM is a Node Package Manager which is used to manage dependencies for your React project, including the React
+libraries itself.
+node_modules folder contains all the dependencies of the project, including the React Libraries.
+
+What is the role of "public" folder in React Project?
+Public folder contains static assets that are served directly to the user's browser such as images, fonts and the
+index.html file.
+
+What is the role of "src" folder in React?
+In React, src folder is used to store all the source code of the application.
+
+What is the role of "index.html" page in React?
+index.html file in a React project is the entry point to the application.
+
+What is the role of App.js file in React?
+App.js is the top/main/root level component in a React application, and it is responsible for rendering all of
+other components.
+
+What is the role of "function" and "return" inside App.js?
+In React, a function is a JavaScript Function that returns a React element.
+
+What is the role of "export default" inside App.js?
+It is used to make App component available for import using "import" statement in other files.
+
+What is the role of index.js file, ReactDOM and render method in React?
+Index.js file is the JavaScript file which renders all the components and replace the root element of index.html
+file with the newly rendered root element.
+ReactDOM is a javascript library which convert your components(which are written in React syntax) to the actual
+browser DOM.
+
+What is JSX?
+JSX(JavaScript XML) is a syntax extension used by React to write HTML-like code.
+
+What are advantages of JSX?
+1)Improve code readability and writability.
+2)Error checking in advance(Type Safety)
+3)Support JavaScript expressions
+4)Improved performance
+5)Code reusability
+
+Can browser read a JSX file? What is Babel?
+No, Browser will not understand the JSX code directly. Babel in React is used to transpile JSX syntax into regular 
+JavaScript which browser can understand.
+
+What is Transpiler?
+A transpiler is a tool that converts source code from one programming language to another.
+
+Is it possible to use JSX without React?
+Yes, it's possible to use JSX without React by creating your own transpiler like Babel. However, this is not recommended since JSX is tightly integrated with React and relies on many React-specific features.
+
+What is the role of fragment in React?
+In React, a fragment is a way to group a list of children without adding extra nodes to the DOM.
+
+What is map() method?
+map() method allows you to iterate over an array and modify its elements using a callback function.
+
+What are spread operator?
+The spread operator(...) is used to expand or spread an array or object.
+
+What are types of conditional rendering in JSX?
+1)if/else statements.
+2)Ternary Operator.
+3)&& Operator
+4)switch Statement
+
+Write about lifecycle methods?
+In React.js, components go through a series of lifecycle methods during their existence. These methods provide hooks that allow you to run code at particular points in the component's lifecycle. The lifecycle can be divided into several main phases: Mounting, Updating, and Unmounting, Error Handling.
+
+
+Here are the main lifecycle methods:
+
+Mounting Lifecycle Method is a phase of lifecycle method in ReactJS and it's when an instance of a component is being created and inserted into the DOM.
+   
+   Mounting phase has four methods such as 
+            1)constructor, 
+            2)static getDerivedStateFromProps,
+            3)render 
+            4)componentDidMount.
+
+
+1) constructor(props)->1.1) It is a special function that will get called whenever a new component is created.
+                       1.2) constructor used for initialising state or binding the event handlers for to the class instance.
+                       1.3) Don't do - Never make HTTP Request from within constructor
+                       1.4) Must do call special function called super(props) and this will call base class constructor
+
+
+2) static getDerivedStateFromProps(props,state)->2.1) This Method basically used when the state of the component 						      depend on changes in props over time.
+                                                 2.2) When initial state of component depends on the props being 						      passed to component, in such scenarios use the method 							      setstate
+                                                 2.3) It is static and so unable to use this keyword instead 							      return an object that represents the new state of the 							      component
+                                                 2.4) Don't do - Never make HTTP Request from within constructor
+
+
+3) render()->3.1) render method only required method in class component
+             3.2) render method reads props & state and return JSX
+             3.3) render function is pure function for given props & state it should always return same UI.
+             3.4) Do not change state or interact with DOM or make ajax calls.
+             3.5) Since it's render method jsx which also contains other children components right after the 			  parent render method, Children components lifecycle methods are also executed.
+
+
+4) componentDidMount()->4.1) Invoked immediately after a component and all its children components have been 				     rendered to the DOM.
+                        4.2) It cause side effects. For Ex: Interact with the DOM or perform any ajax calls to load data.
+
+
+
+Updating Lifecycle Method is when components called re-rendered because of changes to either props or state.
+
+There are five methods now we study about that methods such as
+            1) static getDerivedStateFromProps(props,state)->1.1) This is static  method which receives props and 							          state as parameter and has to return either null 								  or an object that represents the updated state 								  of the component.
+                                                            1.2) This method is called everytime a component is 								 re-rendered.
+                                                            1.3) Don't do - Never make HTTP Request 
+            
+            2) shouldComponentUpdate()->2.1) This method receives updated props and state
+                                        2.2) It Dictates if the component should re-render or not
+                                        2.3) Basically for Performance Optimization
+                                        2.4) Don't do - Never make HTTP Requests Calling the setState Method
+            
+            3) render()->3.1) render method only required method in class component
+                         3.2) render method reads props & state and return JSX
+                         3.3) render function is pure function for given props & state it should always return 				      same UI.
+                         3.4) Do not change state or interact with DOM or make ajax calls.
+            
+            4) getSnapshotBeforeUpdate(prevProps,prevState)->4.1) This method accepts prevProps,prevState as 									  parameter and is called right before the changes 								  from the VirtualDOM are to be reflected in the 								  DOM.
+                                                            4.2) This rarely method use to capture some 								         information from the DOM, For Ex: you can read 								 scroll position after the update maintain that 								 scroll position by performing some calculations.
+                                                            4.3) This method will either return null or a value. 								 Returned value will be passed as the third 								         parameter to the next method.  
+                                                    
+            5) componentDidUpdate(prevProps,prevState,snapshot)->5.1) This method called after the render is 									      finished in the re-render cycles.
+                                                                 5.2) It has three parameters suchas 										      prevProps,prevState,snapshot, snapshot value 								      will returned from getSnapshotBeforeUpdate()
+                                                                 5.3) It cause side effects.

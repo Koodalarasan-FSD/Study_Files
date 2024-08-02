@@ -1,0 +1,154 @@
+What is REST API?
+REST(REpresentational State Transfer) is an architectural style for designing networked applications(REST is a set of guidelines for creating APIs).
+RESTful API is a service which follow REST principles/guidelines.
+REST API uses HTTP or HTTPS Protocols.
+REST API uses lightweights formats like JSON,XML
+REST API is generally lightweight, faster and stateless
+REST API relies on HTTP status codes like 200,201,404
+
+What is API Call?
+The API Call is the process of sending a request to your API after setting up the right endpoints. For ex: By entering your login and password into a website and hitting 'enter', you made an API Call.
+
+What is API Endpoint?
+An endpoint is the end of a communication channel. When APIs interact with other systems, each touchpoint of interaction is considered an endpoint.
+
+What is API Keys?
+An API Key is a unique identifier that enables other software to authenticate a user, developer, or API calling software to an API to ensure that this person or software is who it says it is.
+
+What is API Integration?
+In simple terms, API integration connects two or more applications to exchange data between them and connect to the outside world.
+
+What is API Gateway?
+An API Gateway is an API management tool that serves as an intermediary between the client and a set of different backend services.
+
+What is HTTP Request and Response structures in UI and REST API?
+HTTP(Hypertext Transfer Protocol) Request is a message sent by a client(such as a web browser or a mobile app) to a server, requesting a particular action or resource. It contains HTTP Action(GET,POST...), URL, Request Body, Request Header.
+HTTP(Hypertext Transfer Protocol) Response is a message sent by a server back to the client in response to an HTTP request. It includes status code, content type, content.
+
+What are TOP 5 REST Guidelines?
+1)Separation of Client and Server - The implementation of the client and the server must be done independently. 
+2)Stateless Server - The server will not store anything about the latest HTTP request the client made.
+3)Uniform Interface - Identify the resources by URL.
+4)Cacheable - The API response should be cacheable to improve the performance
+5)Layered System - The system should follow layered pattern
+
+What are HTTP verbs and HTTP methods?
+1)HTTP methods also known as HTTP Verbs.
+2)HTTP methods(Verbs) are a set of action that a client can take on a resource.
+
+What are GET,POST,PUT,DELETE HTTP Methods?
+GET - It will retrieve data from a specified resource.
+POST - Submit data to be processed.
+PUT - Update a resource.
+DELETE - Removal request to remove a data/resource
+
+What is Difference between PUT & PATCH methods?
+Both PUT and PATCH method are used to update a resource by replacing the resource with the new data provided in the request.
+
+But,
+In a PUT request, the client sends the full updated resource in the request body, replacing the existing resource on the server.
+For Ex:
+// PUT URL: www.example.com/users/123
+// PUT request body
+{
+"id":123,
+"name":"John Doe Updated",
+"email:"john@example.com",
+"age":26
+}
+In a PATCH request, the client sends specific changes or instructions for modifying the resource, updating only certain fields without resending the entire resource.
+For Ex:
+// PATCH URL: www.example.com/users/123
+// PATCH request body
+{
+"name":"John Doe Updated",
+"age":26
+}
+
+
+Explain the concept of Idempotence in RESTful APIs?
+1)Idempotence meaning performing an operation multiple times should have the same outcome as performing it once.
+For Ex: Sending multiple identical GET requests will always return the same response.
+2)Idempotent methods are GET, PUT, DELETE.
+3)Non-Idempotent methods are POST.
+
+What are the role of Status Codes in RESTful APIs?
+Status Codes are used to convey the result's of a client's request.
+
+1XX(Info) - 100: continue
+2XX(Success) - 200: OK
+	       201: Created
+	       202: Accepted
+	       204: No Content
+3XX(Redirection) - 300: Multiple Choices
+4XX(Client Error) - 400: Bad Request
+		    401: unauthorized
+		    403: Forbidden
+		    404: Not Found
+5XX(Server Error) - 500: Internal Server Error
+		    501: Not Implemented
+		    502: Bad Gateway
+		    503: Service Unavailable
+
+What is CORS in RESTful APIs?
+CORS(Cross-Origin Resource Sharing) is a security feature implemented in web browsers that restricts web pages or scripts from making requests to a different domain than the one that served the web page.
+
+How to remove CORS restrictions in RESTful APIs?
+CORS restriction can be removed by enabling CORS middleware in application.
+
+What are Serialization & Deserialization?
+Serialization is the process of converting an object into a format that can be stored, transmitted or reconstructed later.
+For Ex: Serialization: Object -> JSON
+Deserialization is the process of converting serialized data, such as binary/XML/JSON data, back into an object.
+For Ex: Deserialization: JSON -> Object
+
+What are types of Serialization?
+Types of Serialization - 1)Binary Serialization, 2)XML Serialization, 3)JSON Serialization
+
+Explain the concept of versioning in RESTful APIs?
+Versioning in RESTful APIs refers to the practice of maintaining multiple versions of an API to support backward compatibility.
+
+What is backward-compatible?
+            - Backward compatibility (or backward-compatible) refers to the ability of a system, software, or 
+              component to interact with and support older versions of itself or other systems without causing 
+              issues or requiring changes to the existing infrastructure. In other words, backward-compatible 
+              changes ensure that new versions of a software application or API do not break or disrupt 
+              the functionality of older versions.
+            - Backward compatibility ensures that newer versions of software can coexist with older versions 
+              without causing disruptions. This is crucial for maintaining a stable and reliable environment, 
+              especially in scenarios where multiple versions of software components interact with each other.
+
+What is API Document? What are the popular document formats?
+An API document describe the functionality, features and usage of a REST API.
+1)Swagger(OpenAPI) 2)RAML 3)API Blueprint are some of REST API Documentation formats.
+
+What is typical structure of a REST API project in "Node"?
+node_modules: Directory where npm packages are installed.
+src: Source code Directory which contains below things
+     controllers: Contains files responsible for handling business logic
+     Models: Defines data models.
+     routes: Defines API routes.
+     utils: Contains reusable functions used across the project.
+     app.js: Initializes and configures the Express application. Connects routes, middleware and other 			     configurations.
+gitignore: A file that specifies file and directories to be ignored by version control(e.g.,node_modules, *.log).
+package.json: The file that contains metadata about the project and its dependencies.
+
+What is Authentication and Authorization?
+Authentication is the process of verifying the identity of a user by validating their credentials such as username and password.
+Authorization is the process of allowing an authenticated user access to resources. Authentication is always precedes to Authorization.
+
+What is types of Authentication in Node.js?
+1)Basic(Username and Password) Authentication 
+2)API Key Authentication
+3)Token-based Authentication
+4)Multi-factor Authentication
+5)Certificate-based Authentication
+
+What is Basic Authentication?
+In Basic Authentication, the user passes their credentials on a post request. At the Node REST API end, credentials are verified and response is sent back.
+Disadvantage is, It will sends credentials in plain text over the network, so it's not considered a secure method of authentication.
+
+What is API Key Authentication?
+API Key Authentication - In API Key Authentication, the API owner will share an API key with the users and this key will authenticate the users of that API.
+The Disadvantages of it's API keys can be shared or stolen therefore it may not be suitable for all scenarios.
+
